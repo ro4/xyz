@@ -23,6 +23,7 @@
 				<th>平台</th>
 				<th>支付方式</th>
 				<th>详情</th>
+				<th>地址</th>
 				<th>状态</th>
 				<th>操作</th>				
 			</tr>
@@ -48,8 +49,8 @@
 					<?php echo date('Y-m-d H:i:s',$model['update_time']); ?>
 				</td>
 				<td>
-					<?php echo $model['platform'] ?>
-				</td>
+					<abbr title="<?php echo $model['platform'] ?>"><?php echo substr($model['platform'],0,20)?></abbr>
+				</td>	
 				<td>
 					<?php if($model['pay_style'] == 0){
 							echo '在线支付';
@@ -58,7 +59,72 @@
 							}?>
 				</td>
 				<td>
-					<?php echo $model['detail'] ?>
+					<?php $details = json_decode($model['detail']);
+					if(count($details)>1){
+						foreach ($details as $detail) {
+							$itemModel = $this->getItemInfo($detail->id);
+							if($detail->heat = 0){
+                        	$heat = "热";
+                        		} else {
+                        		$heat = "冷";
+                        	}
+                        	switch ($detail->sugar) {
+                        		case '10':
+                        			$sugar = "正常(10分)";
+                        			break;
+                        		case '8':
+                        			$sugar = "少糖(8分)";
+                        			break;
+                        		case '5':
+                        			$sugar = "半糖(5分)";
+                        			break;
+                        		case '3':
+                        			$sugar = "微糖(3分)";
+                        			break;
+                        		case '0':
+                        			$sugar = "无糖(0分)";
+                        			break;
+                        		default:
+                        			$sugar = "无信息";
+                        			break;
+                        	}
+                        	echo $itemModel['title'].$detail->count."杯  糖分:".$sugar.$heat."<br/>";
+						}
+					} else {
+						//var_dump($details[0]);
+						$itemModel = $this->getItemInfo($details[0]->id);
+							if($details[0]->heat = 0){
+                        	$heat = "热";
+                        		} else {
+                        		$heat = "冷";
+                        	}
+                        	switch ($details[0]->sugar) {
+                        		case '10':
+                        			$sugar = "正常(10分)";
+                        			break;
+                        		case '8':
+                        			$sugar = "少糖(8分)";
+                        			break;
+                        		case '5':
+                        			$sugar = "半糖(5分)";
+                        			break;
+                        		case '3':
+                        			$sugar = "微糖(3分)";
+                        			break;
+                        		case '0':
+                        			$sugar = "无糖(0分)";
+                        			break;
+                        		default:
+                        			$sugar = "无信息";
+                        			break;
+                        	}
+                        	echo $itemModel['title'].$details[0]->count."杯  糖分:".$sugar.$heat."<br/>";
+					}
+					
+					?>
+				</td>
+				<td>
+					<?php echo $model['address'] ?>
 				</td>
 				<td>
 					<?php if($model['state'] == 0):?>
@@ -98,5 +164,16 @@
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
+					<tr>
+			<td colspan="10" style="text-align:center;">
+				<?php 
+                  //分页
+                  $this->widget('CLinkPager', array(
+						 'header'=>'',
+						 'pages' => $pages,
+					));
+		 		 ?>
+		 	</td>
+			</tr>
 	</table>
 </div>

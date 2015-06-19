@@ -10,7 +10,7 @@ class OrderController extends BaseController {
 	 * 显示商品
 	 */
 	public function actionIndex(){
-		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
+		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`address`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
 		from `{{order}}`";
 
 		if(isset($_GET['state'])){
@@ -40,7 +40,7 @@ class OrderController extends BaseController {
 	}	
 
 	public function actionWait4Pay(){
-		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
+		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`address`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
 		from `{{order}}`
 		where `{{order}}`.`pay_style` = 0 and `{{order}}`.`state` = 0";
 
@@ -68,7 +68,7 @@ class OrderController extends BaseController {
 	}
 
 	public function actionWait4Send(){
-		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
+		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`address`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
 		from `{{order}}`
 		where (`{{order}}`.`pay_style` = 0 and `{{order}}`.`state` = 1) or (`{{order}}`.`pay_style` = 1 and `{{order}}`.`state` = 2)";
 
@@ -96,7 +96,7 @@ class OrderController extends BaseController {
 	}
 
 	public function actionWait4Confirm(){
-		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
+		$sql="select `{{order}}`.`oid`,`{{order}}`.`uid`,`{{order}}`.`address`,`{{order}}`.`add_time`,`{{order}}`.`update_time`,`{{order}}`.`platform`,`{{order}}`.`pay_style`,`{{order}}`.`detail`,`{{order}}`.`amount`,`{{order}}`.`state`
 		from `{{order}}`
 		where `{{order}}`.`pay_style` = 1 and `{{order}}`.`state` = -1";
 
@@ -181,6 +181,10 @@ class OrderController extends BaseController {
 			$this->error(var_dump($item->errors));
 		}
 
+	}
+
+	public function getItemInfo($id){
+		return Item::model()->findByPk($id);
 	}
 
 }

@@ -80,6 +80,17 @@
 				</td>			
 			</tr>
 		<?php endforeach; ?>
+					<tr>
+			<td colspan="10" style="text-align:center;">
+				<?php 
+                  //分页
+                  $this->widget('CLinkPager', array(
+						 'header'=>'',
+						 'pages' => $pages,
+					));
+		 		 ?>
+		 	</td>
+			</tr>
 		</tbody>
 	</table>
 </div>

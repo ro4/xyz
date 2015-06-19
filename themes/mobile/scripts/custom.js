@@ -64,6 +64,7 @@ $(document).ready(function() {
     //Sharebox Settings//
         
     $('.show-share-bottom').click(function(){
+    	$('.footer-ball').css("bottom","300px");
        $('.share-bottom').toggleClass('active-share-bottom'); 
         $('.header, .footer-ball').removeClass('hide-header-left');
         snapper.close();
@@ -71,6 +72,7 @@ $(document).ready(function() {
     });    
     
     $('.close-share-bottom, #content, .open-menu, .open-more').click(function(){
+    	$('.footer-ball').css("bottom","32px");
        $('.share-bottom').removeClass('active-share-bottom'); 
     });
     

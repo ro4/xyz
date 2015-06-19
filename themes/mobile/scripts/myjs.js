@@ -45,6 +45,12 @@ function getCart(){
 }
 
 function setLabel(){
-	$(".footer-ball").text(getCart().length);
-	$("#cart").text(getCart().length);
+	num = 0;
+	cart = getCart();
+	for(var i = 0; i <cart.length; i++){
+		num = parseInt(cart[i].count) + num;
+	}
+	//console.log(cart);
+	$(".footer-ball").text(num);
+	$("#cart").text(num);
 }

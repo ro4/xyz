@@ -22,6 +22,9 @@ class CartController extends Controller{
 	}
 
 	public function actionCheckPay(){
+		if($_POST['tel'] == '' or $_POST['address'] == ''){
+			$this->error("请输入联系方式和地址");
+		}
 		$total = 0;
 		$cookies = Yii::app()->request->getCookies();
 		if($cookies['cart'] == null){
@@ -39,7 +42,7 @@ class CartController extends Controller{
 		$order->pay_style = $_POST['pay_style'];
 		$order->platform = Yii::app()->request->getUserAgent();
 		if($_POST['pay_style'] == 0){
-			$order->state = 1;
+			$order->state = 0;
 		} else {
 			$order->state = -1;
 		}
