@@ -1,3 +1,6 @@
+<?php 
+	$this->pageTitle='微信';
+?>
 <div class="content">
             <div class="header-clear"></div>
             

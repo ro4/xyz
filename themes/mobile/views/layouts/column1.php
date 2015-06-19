@@ -11,6 +11,7 @@
 	Yii::app()->clientScript->registerScriptFile(yii::app()->theme->baseUrl.'/scripts/framework.plugins.js');
 	Yii::app()->clientScript->registerScriptFile(yii::app()->theme->baseUrl.'/scripts/jquery.js');
 	Yii::app()->clientScript->registerScriptFile(yii::app()->theme->baseUrl.'/scripts/jqueryui.js');
+	Yii::app()->clientScript->registerScriptFile(yii::app()->theme->baseUrl.'/scripts/myjs.js');
 ?>
 <?php $this->beginContent('//layouts/main'); ?>
 <div class="container wrap">

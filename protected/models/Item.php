@@ -58,6 +58,8 @@ class Item extends CActiveRecord
 			'title' => 'Title',
 			'price' => 'Price',
 			'detail' => 'Detail',
+			'type' => 'Type',
+			'type_name' => 'Type Name',
 			'add_time' => 'Add Time',
 			'update_time' => 'Update Time',
 			'view_count' => 'View Count',
@@ -83,6 +85,8 @@ class Item extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('price',$this->price,true);
 		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('type_name',$this->type_name,true);
 		$criteria->compare('add_time',$this->add_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
 		$criteria->compare('view_count',$this->view_count,true);

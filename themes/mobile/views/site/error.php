@@ -1,3 +1,6 @@
+<?php 
+	$this->pageTitle='该页面不存在';
+?>
 <div class="content">
     <h1>404</h1>
     <h4>该页面不存在</h4>

@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'在线教育资源分享',
+	'name'=>'曲靖下一站奶茶',
 	'theme'=>'mobile',
 	'language'=>'zh_cn',
 	'timeZone'=>'Asia/Shanghai',

@@ -16,8 +16,7 @@
 <link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
 <link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
 
-<title>Epsilon Mobile Framework - Version 2.0</title>
-
+<title><?php echo CHtml::encode($this->pageTitle); ?> - <?php echo Yii::app()->name;?> </title>
 </head>
 <body> 
 
@@ -36,7 +35,7 @@
         <div class="snap-drawer snap-drawer-left">
             <a href="/" class="selected-item"><i class="fa fa-home"></i>首页</a>
             <a href="/item"><i class="fa fa-cog"></i>所有产品</a>
-            <a href="/cart"><i class="fa fa-picture-o"></i>购物车</a>
+            <a href="/cart"><i id="cart" class="fa fa-picture-o"></i>购物车</a>
             <a href="/show/about"><i class="fa fa-envelope-o"></i>联系我们</a>
             <a href="/show/wechat"><i class="fa fa-wechat"></i>微信</a>
             <a href="#" class="sidebar-close"><i class="fa fa-times"></i>Close</a>
@@ -45,9 +44,9 @@
     
     <div class="header">
         <a href="/" class="main-logo"></a>
-        <a href="#" class="open-menu"><i class="fa fa-navicon"></i></a>
+        <a href="#" class="open-menu" onclick="setLabel()"><i class="fa fa-navicon"></i></a>
         <a href="/show/about" class="open-mail"><i class="fa fa-envelope-o"></i></a>
-        <a href="tel:" class="open-call"><i class="fa fa-phone"></i></a>
+        <a href="tel:15187900109" class="open-call"><i class="fa fa-phone"></i></a>
     </div> 
     
     <a href="#" class="footer-ball"><i class="fa fa-navicon"></i></a>
@@ -60,10 +59,10 @@
             <p class="center-text">Code By <a href="http://thefrp.sinaapp.com/" target="_blank" title="Fan Lab">Fan Lab</a> - Powered By Yii
 </p>
             <div class="footer-socials half-bottom">
-                <a href="#" class="footer-facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="footer-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="footer-facebook"><i class="fa fa-renren"></i></a>
+                <a href="#" class="footer-twitter"><i class="fa fa-weibo"></i></a>
                 <a href="#" class="footer-transparent"></a>
-                <a href="#" class="footer-share show-share-bottom"><i class="fa fa-share-alt"></i></a>
+                <a href="/show/wechat" class="footer-share"><i class="fa fa-wechat"></i></a>
                 <a href="#" class="footer-up"><i class="fa fa-angle-up"></i></a>
             </div>
         </div>     
@@ -85,23 +84,33 @@
                         'validateOnSubmit'=>true,
                 )));
             ?>
+            <input type="text" name="id" id="change" value="" style="visibility: hidden;"/>
             选择甜度:
-            <?php echo $form->dropDownList($model,'sugar',array('10'=>'正常','8'=>'少糖'));?>
+            <select id="sugar">
+            <option value ="10">正常(10分)</option>
+            <option value ="8">少糖(8分)</option>
+            <option value ="5">半糖(5分)</option>
+            <option value ="3">微糖(3分)</option>
+            <option value ="0">无糖(0分)</option>
+            </select>
             选择温度:
-            <?php echo $form->dropDownList($model,'heat',array('0'=>'冷','1'=>'热'));?>
+            <select id="heat">
+            <option value ="0">冷</option>
+            <option value ="1">热</option>
+            </select>
             <h6>数目</h6>
-            <input type="number" name="count" value=""/>
+            <input type="number" id="count" name="count" value="1"/>
             <h6>备注:</h6>
-            <?php echo $form->textField($model,'mark');?>
+            <input type="text" id="mark" name="mark" value=""/>
             <div class="formSubmitButtonErrorsWrap">
-            <input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="SUBMIT" data-formId="contactForm"/>
+            <input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="提交" onclick="add2cart()" />
             </div>
         <?php 
             $this->endWidget();
         ?>
     </div>
         </div>
-        <a href="#" class="close-share-bottom">Close</a>
+        <a href="#" class="close-share-bottom">关闭</a>
     </div>
     
 </div>
