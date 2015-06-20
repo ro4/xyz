@@ -16,6 +16,12 @@
 <?php $this->beginContent('//layouts/main'); ?>
 <div class="container wrap">
  	<div class="row" id="container_row">
+ 	<?php $sm = Server::model()->findByPk(1)?>
+ 	<?php if($sm['is_open'] == '0'):?>
+ 	<div class="static-notification-red">
+    <p class="center-text uppercase">本店已经打烊，暂时不接受订单!</p>
+    </div>
+	<?php endif;?>
 		<?php echo $content; ?>
 	</div>
 </div><!-- content -->

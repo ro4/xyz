@@ -4794,3 +4794,137 @@ REQUEST_URI=/backend.php?r=order/index
 in D:\code\xyz\protected\admin\views\order\index.php (94)
 in D:\code\xyz\protected\admin\controllers\OrderController.php (39)
 in D:\code\xyz\backend.php (13)
+2015/06/20 11:45:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`.
+in D:\code\xyz\protected\admin\controllers\ItemController.php (22)
+in D:\code\xyz\backend.php (13)
+2015/06/20 11:45:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`' in D:\code\xyz\framework\db\CDbCommand.php:541
+Stack trace:
+#0 D:\code\xyz\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\code\xyz\protected\admin\controllers\ItemController.php(22): CDbCommand->queryAll()
+#2 D:\code\xyz\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#3 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#8 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\code\xyz\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php?r=item/index
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---
+2015/06/20 11:45:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`.
+in D:\code\xyz\protected\admin\controllers\ItemController.php (22)
+in D:\code\xyz\backend.php (13)
+2015/06/20 11:45:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`' in D:\code\xyz\framework\db\CDbCommand.php:541
+Stack trace:
+#0 D:\code\xyz\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\code\xyz\protected\admin\controllers\ItemController.php(22): CDbCommand->queryAll()
+#2 D:\code\xyz\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#3 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#8 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\code\xyz\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php?r=item/index
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---
+2015/06/20 11:46:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`.
+in D:\code\xyz\protected\admin\controllers\ItemController.php (22)
+in D:\code\xyz\backend.php (13)
+2015/06/20 11:46:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`' in D:\code\xyz\framework\db\CDbCommand.php:541
+Stack trace:
+#0 D:\code\xyz\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\code\xyz\protected\admin\controllers\ItemController.php(22): CDbCommand->queryAll()
+#2 D:\code\xyz\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#3 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#8 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\code\xyz\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php?r=item/index
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---
+2015/06/20 11:46:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`.
+in D:\code\xyz\protected\admin\controllers\ItemController.php (22)
+in D:\code\xyz\backend.php (13)
+2015/06/20 11:46:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1109 Unknown table 'xyz_item' in field list. The SQL statement executed was: select `xyz_item`.`*`' in D:\code\xyz\framework\db\CDbCommand.php:541
+Stack trace:
+#0 D:\code\xyz\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\code\xyz\protected\admin\controllers\ItemController.php(22): CDbCommand->queryAll()
+#2 D:\code\xyz\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#3 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#8 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\code\xyz\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php?r=item/index
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---
+2015/06/20 11:47:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'xyz_item.*' in 'field list'. The SQL statement executed was: select `xyz_item`.`*` from `xyz_item`.
+in D:\code\xyz\protected\admin\controllers\ItemController.php (22)
+in D:\code\xyz\backend.php (13)
+2015/06/20 11:47:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'xyz_item.*' in 'field list'. The SQL statement executed was: select `xyz_item`.`*` from `xyz_item`' in D:\code\xyz\framework\db\CDbCommand.php:541
+Stack trace:
+#0 D:\code\xyz\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\code\xyz\protected\admin\controllers\ItemController.php(22): CDbCommand->queryAll()
+#2 D:\code\xyz\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#3 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#8 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\code\xyz\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php?r=item/index
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---
+2015/06/20 11:48:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'xyz_item.*' in 'field list'. The SQL statement executed was: select `xyz_item`.`*` from `xyz_item`.
+in D:\code\xyz\protected\admin\controllers\ItemController.php (22)
+in D:\code\xyz\backend.php (13)
+2015/06/20 11:48:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'xyz_item.*' in 'field list'. The SQL statement executed was: select `xyz_item`.`*` from `xyz_item`' in D:\code\xyz\framework\db\CDbCommand.php:541
+Stack trace:
+#0 D:\code\xyz\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\code\xyz\protected\admin\controllers\ItemController.php(22): CDbCommand->queryAll()
+#2 D:\code\xyz\framework\web\actions\CInlineAction.php(49): ItemController->actionIndex()
+#3 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#8 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\code\xyz\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php?r=item/index
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---
+2015/06/20 16:50:10 [error] [exception.CDbException] exception 'CDbException' with message '列名必须是一个字符串或者数组' in D:\code\xyz\framework\db\schema\CDbCommandBuilder.php:722
+Stack trace:
+#0 D:\code\xyz\framework\db\schema\CDbCommandBuilder.php(519): CDbCommandBuilder->createInCondition(Object(CMysqlTableSchema), NULL, Array, NULL)
+#1 D:\code\xyz\framework\db\ar\CActiveRecord.php(1689): CDbCommandBuilder->createPkCriteria(Object(CMysqlTableSchema), NULL, '', Array)
+#2 D:\code\xyz\framework\db\ar\CActiveRecord.php(1070): CActiveRecord->updateByPk(NULL, Array)
+#3 D:\code\xyz\protected\admin\controllers\SiteController.php(23): CActiveRecord->update(Array)
+#4 [internal function]: SiteController->actionSetServer('0')
+#5 D:\code\xyz\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#6 D:\code\xyz\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#7 D:\code\xyz\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 D:\code\xyz\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 D:\code\xyz\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\code\xyz\framework\web\CWebApplication.php(282): CController->run('setserver')
+#11 D:\code\xyz\framework\web\CWebApplication.php(141): CWebApplication->runController('site/setserver')
+#12 D:\code\xyz\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 D:\code\xyz\backend.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend.php?r=site/setserver&var=0
+HTTP_REFERER=http://xyz.me/backend.php?r=site/index
+---

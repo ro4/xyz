@@ -17,6 +17,19 @@ class SiteController extends BaseController{
 	public function actionInfo(){
 		echo '系统信息！~';
 	}
+
+	public function actionSetServer($var){
+
+		if(Server::model()->updateByPk('1',array('is_open'=>$var))){
+			$this->success("修改成功");
+		}else {
+			$this->success("修改失败");
+		}
+	}
+
+	public function getServer(){
+		return Server::model()->findByPk(1);
+	}
 }
 
 ?>

@@ -3,15 +3,16 @@
 ?>
 <div class="content"> 
 <div class="decoration hide-if-responsive"></div> 
-		<?php $total = 0?>
+		<?php $total = 0;
+        $flag = 0;?>
         <?php foreach($models as $model):?>
         <p class="notification-page-item">
-        <?php //var_dump($model->id)?>
+        <?php //var_dump($model->heat == '0')?>
                     <i class="fa fa-check green-notification"></i>
                     <em>
                         <?php 
                         $itemModel = $this->getItemInfo($model->id);
-                        if($model->heat = 0){
+                        if($model->heat == '1'){
                         	$heat = "热";
                         } else {
                         	$heat = "冷";
@@ -36,15 +37,16 @@
                         		$sugar = "无信息";
                         		break;
                         }
-                        echo $itemModel['title']."<br/>".$itemModel['price']."元*".$model->count."杯  糖分:"
-                        .$sugar.$heat;
-                        $total = $model->count * $itemModel['price'] + $total?>
+                        echo $itemModel['title']."<br/>".$itemModel['price']."元*".$model->count."杯 "
+                        .$sugar."  ".$heat;
+                        echo "<br/>备注:".$model->mark;
+                        $total = $model->count * $itemModel['price'] + $total;?>
                     </em>
-                    <a href="#">修改</a>
-                    <a href="#">删除</a>
+                    <a class="show-share-bottom" onclick="updateCart(<?php echo $flag;?>)">修改</a>
+                    <a onclick="mdel(<?php echo $flag;?>,1)">删除</a>
         </p>  
 <div class="decoration"></div> 
-        <?php endforeach;?>
+        <?php $flag++;endforeach;?>
 		<a href="/cart/pay">
         <div class="static-notification-green">
             <p class="center-text uppercase">共<?php echo $total?>元，去付款</p>

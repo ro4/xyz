@@ -11,13 +11,15 @@
                             <li><a href="/item?cate=2"><i class="fa fa-angle-right"></i>下一站醇香奶茶</a></li>
                             <li><a href="/item?cate=3"><i class="fa fa-angle-right"></i>下一站柠檬系列</a></li>
                             <li><a href="/item?cate=4"><i class="fa fa-angle-right"></i>下一站鲜奶系列</a></li>
+                            <li><a href="/item?cate=5"><i class="fa fa-angle-right"></i>下一站手工调制</a></li>
                         </ul>
                     </div>
                     <div class="one-half last-column">
                         <ul class="blog-category">
-                            <li><a href="/item?cate=5"><i class="fa fa-angle-right"></i>下一站手工调制</a></li>
                             <li><a href="/item?cate=6"><i class="fa fa-angle-right"></i>下一站如意茶</a></li>
                             <li><a href="/item?cate=7"><i class="fa fa-angle-right"></i>下一站紫米精选</a></li>
+                            <li><a href="/item?cate=8"><i class="fa fa-angle-right"></i>下一站伴手礼</a></li>
+                            <li><a href="/item?cate=9"><i class="fa fa-angle-right"></i>下一站奶昔精选</a></li>
                             <li><a href="/item"><i class="fa fa-angle-right"></i>全部</a></li>
                         </ul>
                     </div>
@@ -27,13 +29,13 @@
             <?php foreach($models as $model):?>
             	<div class="decoration"></div> 
                 <p class="user-list-follow">
-                    <img src="http://ww3.sinaimg.cn/large/6af4b991gw1efvkygninvj20dt0dymy6.jpg" alt="img">
+                    <img src="http://ww1.sinaimg.cn/large/6af4b991gw1etamnsszfuj208h07ht99.jpg" alt="img">
                     <strong><?php echo $model['title']?>   <?php echo $model['price']?>元<br><em><?php echo $model['detail']?></em></strong>
-                    <?php if(1 == $model['state']):?>
+                    <?php if('1' == $model['state']):?>
                     <a class="follow show-share-bottom" onclick="sendId(<?php echo $model['id']?>)">加入购物车</a>
-                    <?php elseif(2 == $model['state']):?>
+                    <?php elseif('2' == $model['state']):?>
                     <a class="follow">售光</a>
-                    <?php elseif(0 == $model['state']):?>
+                    <?php elseif('0' == $model['state']):?>
                     <a class="follow">下架</a>
                 	<?php endif;?>
                 </p>

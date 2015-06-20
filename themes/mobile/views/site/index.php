@@ -7,7 +7,7 @@
                         <h3>Swipe me!</h3>
                         <p>Hope you enjoy our latest item!</p>
                     </div>
-                    <img src="http://ww3.sinaimg.cn/large/6af4b991gw1efvkygninvj20dt0dymy6.jpg" class="responsive-image" alt="img">
+                    <img src="http://ww1.sinaimg.cn/large/6af4b991gw1etamnsszfuj208h07ht99.jpg" class="responsive-image" alt="img">
                 </div>
                 <div>
                     <div class="overlay"></div>
@@ -15,7 +15,7 @@
                         <h3>Slider</h3>
                         <p>Our slider is awesome!</p>
                     </div>
-                    <img src="http://ww3.sinaimg.cn/large/6af4b991gw1efvkygninvj20dt0dymy6.jpg" class="responsive-image" alt="img">
+                    <img src="http://ww1.sinaimg.cn/large/6af4b991gw1etamnsszfuj208h07ht99.jpg" class="responsive-image" alt="img">
                 </div>
                 <div>
                     <div class="overlay"></div>
@@ -23,7 +23,7 @@
                         <h3>Responsive</h3>
                         <p>And it's fully responsive!</p>
                     </div>
-                    <img src="http://ww3.sinaimg.cn/large/6af4b991gw1efvkygninvj20dt0dymy6.jpg" class="responsive-image" alt="img">
+                    <img src="http://ww1.sinaimg.cn/large/6af4b991gw1etamnsszfuj208h07ht99.jpg" class="responsive-image" alt="img">
                 </div>
             </div>
         </div>!-->
@@ -42,7 +42,7 @@
             <div class="decoration"></div>
             <div class="content-heading full-bottom">
                 <h2>热门&店长推荐</h2>
-                <em>描述性语句在这列</em>
+                <em> 销量最高 </em>
                 <i class="fa fa-star"></i>
             </div>
             
@@ -54,7 +54,7 @@
                 <?php foreach($models as $model):?>
                     <div>
                         <div class="staff-item">
-                            <img src="http://ww3.sinaimg.cn/large/6af4b991gw1efvkygninvj20dt0dymy6.jpg" alt="img">
+                            <img src="http://ww1.sinaimg.cn/large/6af4b991gw1etamnsszfuj208h07ht99.jpg" alt="img">
                             <h4><?php echo $model['title']?></h4>
                             <em><?php echo $model['price']?>元</em>
                             <strong><?php echo $model['detail']?></strong>

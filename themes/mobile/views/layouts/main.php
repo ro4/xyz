@@ -23,7 +23,7 @@
 <div id="preloader">
 	<div id="status">
     	<p class="center-text">
-			Loading...
+			加载中...
             <em>小小光头骑着摩的!</em>
         </p>
     </div>
@@ -34,11 +34,11 @@
         <!-- Left Sidebar -->
         <div class="snap-drawer snap-drawer-left">
             <a href="/" class="selected-item"><i class="fa fa-home"></i>首页</a>
-            <a href="/item"><i class="fa fa-cog"></i>所有产品</a>
-            <a href="/cart"><i id="cart" class="fa fa-picture-o"></i>购物车</a>
+            <a href="/item"><i class="fa fa-gift"></i>所有产品</a>
+            <a href="/cart"><i id="cart" class="fa fa-shopping-cart"></i>购物车</a>
             <a href="/show/about"><i class="fa fa-envelope-o"></i>联系我们</a>
             <a href="/show/wechat"><i class="fa fa-wechat"></i>微信</a>
-            <a href="#" class="sidebar-close"><i class="fa fa-times"></i>Close</a>
+            <a href="#" class="sidebar-close"><i class="fa fa-times"></i>关闭</a>
         </div>
     </div>
     
@@ -103,12 +103,9 @@
             <h6>备注:</h6>
             <input type="text" id="mark" name="mark" value=""/>
             <div class="formSubmitButtonErrorsWrap">
-            <input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="提交" onclick="add2cart()" />
+            <input type="button" class="buttonWrap button button-green contactSubmitButton" id="addBtn" value="加入购物车" onclick="add2cart()" />
             </div>
-        <?php 
-            $this->endWidget();
-        ?>
-    </div>
+            <?php $this->endWidget(); ?>
         </div>
         <a href="#" class="close-share-bottom">关闭</a>
     </div>

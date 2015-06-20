@@ -41,6 +41,18 @@
 				</td>			
 			</tr>
 			<tr>
+				<th>类别</th>
+				<td>
+					<input type="text"  name="type"> 				
+				</td>			
+			</tr>
+			<tr>
+				<th>类别名称</th>
+				<td>
+					<input type="text"  name="type_name"> 				
+				</td>			
+			</tr>
+			<tr>
 				<th></th>
 				<td>
 					<input type="submit" value="添加" class="btn btn-primary">

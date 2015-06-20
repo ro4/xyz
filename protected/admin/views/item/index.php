@@ -19,6 +19,8 @@
 				<th>商品名</th>
 				<th>商品描述</th>
 				<th>价格</th>
+				<th>类别</th>
+				<th>类别名称</th>
 				<th>添加时间</th>				
 				<th>更新时间</th>	
 				<th>浏览数</th>
@@ -46,6 +48,12 @@
 				<td>
 					<?php echo $model['price'] ?>
 				</td>	
+				<td>
+					<?php echo $model['type'] ?>
+				</td>
+				<td>
+					<?php echo $model['type_name'] ?>
+				</td>
 				<td>
 					<?php echo date('Y-m-d H:i:s',$model['add_time']); ?>
 				</td>	

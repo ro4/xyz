@@ -10,7 +10,7 @@ class ItemController extends BaseController {
 	 * 显示商品
 	 */
 	public function actionIndex(){
-		$sql="select `{{item}}`.`id`,`{{item}}`.`title`,`{{item}}`.`price`,`{{item}}`.`detail`,`{{item}}`.`add_time`,`{{item}}`.`update_time`,`{{item}}`.`view_count`,`{{item}}`.`focus_count`,`{{item}}`.`comment_count`,`{{item}}`.`sale_count`,`{{item}}`.`state` from `{{item}}`";
+		$sql="select `{{item}}`.`id`,`{{item}}`.`title`,`{{item}}`.`price`,`{{item}}`.`detail`,`{{item}}`.`add_time`,`{{item}}`.`update_time`,`{{item}}`.`type`,`{{item}}`.`type_name`,`{{item}}`.`view_count`,`{{item}}`.`focus_count`,`{{item}}`.`comment_count`,`{{item}}`.`sale_count`,`{{item}}`.`state` from `{{item}}`";
 
 		//查找商品
 		if(isset($_POST['content'])){
@@ -80,6 +80,8 @@ class ItemController extends BaseController {
 		$data['detail']=$_POST['detail'];
 		$data['price']=$_POST['price'];
 		$data['state']=$_POST['state'];
+		$data['type']=$_POST['type'];
+		$data['type_name']=$_POST['type_name'];
 		$data['update_time']=time();
 
 		if(false !== Item::model()->updateByPk($_POST['id'],$data)){
@@ -109,6 +111,8 @@ class ItemController extends BaseController {
 		$item->detail=$_POST['detail'];
 		$item->price=$_POST['price'];
 		$item->state=$_POST['state'];
+		$item->type=$_POST['type'];
+		$item->type_name=$_POST['type_name'];
 		$item->add_time=time();
 		if($item->save()){
 			$this->success('添加成功!',$this->createUrl('index'));

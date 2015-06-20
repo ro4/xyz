@@ -11,7 +11,11 @@ class SiteController extends Controller{
 	 */
 	
 	public function actionIndex(){
-		$models = Item::model()->findAll();
+		$criteria=new CDbCriteria();
+		$criteria->condition="type=? and state=?";
+		$criteria->select='id,title,price,detail,sale_count,state';
+		$criteria->params=array("1","1");
+		$models = Item::model()->findAll($criteria);
 		$this->render('index',array('models'=>$models));
 	}
 	

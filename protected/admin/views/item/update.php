@@ -30,6 +30,16 @@
 			<th class="text-right">价格：</th>
 			<td><input type="text" name="price" value="<?php echo $model['price'] ?>" /></td>		
 		</tr>
+
+		<tr>
+			<th class="text-right">类别：</th>
+			<td><input type="text" name="type" value="<?php echo $model['type'] ?>" /></td>		
+		</tr>
+
+		<tr>
+			<th class="text-right">类别名称：</th>
+			<td><input type="text" name="type_name" value="<?php echo $model['type_name'] ?>" /></td>		
+		</tr>
 		<tr>
 			<th>状态</th>
 			<td>

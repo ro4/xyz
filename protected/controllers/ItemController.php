@@ -5,12 +5,16 @@ class ItemController extends Controller{
 		if($_GET){
 			$cate = htmlspecialchars($_GET['cate']);
 			$criteria=new CDbCriteria();
-			$criteria->condition="type=?";
+			$criteria->condition="type=? and state!=?";
 			$criteria->select='id,title,price,detail,sale_count,state';
-			$criteria->params=array($cate);
+			$criteria->params=array($cate,'0');
 			$models = Item::model()->findAll($criteria);
 		} else {
-			$models = Item::model()->findAll();
+			$criteria=new CDbCriteria();
+			$criteria->condition="state!=?";
+			$criteria->select='id,title,price,detail,sale_count,state';
+			$criteria->params=array('0');
+			$models = Item::model()->findAll($criteria);
 		}
 		$this->render('index',array('models'=>$models));
 	}

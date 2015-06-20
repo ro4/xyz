@@ -22,6 +22,10 @@ class CartController extends Controller{
 	}
 
 	public function actionCheckPay(){
+		$sm = Server::model()->findByPk(1);
+		if($sm['is_open'] == '0'){
+			$this->error("本店已经打烊，暂时不接受订单，客官明日再来!",'/');
+		}
 		if($_POST['tel'] == '' or $_POST['address'] == ''){
 			$this->error("请输入联系方式和地址");
 		}
@@ -33,6 +37,9 @@ class CartController extends Controller{
 		$cartModel = json_decode($cookies['cart']);
 		foreach ($cartModel as $model) {
 			$itemModel = $this->getItemInfo($model->id);
+			if($itemModel['state'] != '1'){
+				$this->error($itemModel['title']."已售光或者下架",'/cart');
+			}
 			$total = $model->count * $itemModel['price'] + $total;
 		}
 		$order = new Order();
@@ -51,7 +58,7 @@ class CartController extends Controller{
 		$order->amount = $total;
 		if(!$order->save()){
 			$this->error("提交订单失败，联系店家！","/show/about");
-		} else {
+		} else { 
 			$criteria=new CDbCriteria();
 			$criteria->condition="uid=? and add_time=?";
 			$criteria->select='uid,address,amount,detail,state';
