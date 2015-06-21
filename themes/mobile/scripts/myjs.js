@@ -50,7 +50,7 @@ function mdel(flag,opt){
 
 function madd(){
 	var cart = getCart();
-	var tem = {id:$("#change").val(),sugar:$("#sugar").val(),heat:$("#heat").val(),count:$("#count").val(), mark:$("#mark").val()};
+	var tem = {id:$("#change").val(),sugar:$("#sugar").val(),heat:$("#heat").val(),count:$("#count").val()};
 	if(cart==null){
 		cart = [];
 		cart.push(tem);
@@ -78,7 +78,6 @@ function updateCart(flag){
 	$("#heat").val(cart[flag].heat);
 	$("#sugar").val(cart[flag].sugar);
 	$("#count").val(cart[flag].count);
-	$("#mark").val(cart[flag].mark);
 }
 
 function getCart(){

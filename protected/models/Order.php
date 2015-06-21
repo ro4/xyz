@@ -57,6 +57,8 @@ class Order extends CActiveRecord
 			'uid' => 'uid',
 			'amount' => 'amount',
 			'detail' => 'Detail',
+			'name' => 'name',
+			'mark' => 'mark',
 			'address' => 'Address',
 			'add_time' => 'Add Time',
 			'update_time' => 'Update Time',
@@ -81,6 +83,8 @@ class Order extends CActiveRecord
 		$criteria->compare('uid',$this->uid,true);
 		$criteria->compare('amount',$this->amount,true);
 		$criteria->compare('detail',$this->detail,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('mark',$this->mark,true);
 		$criteria->compare('add_time',$this->add_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
 		$criteria->compare('platform',$this->platform,true);

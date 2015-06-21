@@ -46,6 +46,8 @@ class CartController extends Controller{
 		$order->address = htmlspecialchars($_POST['address']);
 		$order->add_time = time();
 		$order->uid = htmlspecialchars($_POST['tel']);
+		$order->name = htmlspecialchars($_POST['name']);
+		$order->mark = htmlspecialchars($_POST['mark']);
 		$order->pay_style = $_POST['pay_style'];
 		$order->platform = Yii::app()->request->getUserAgent();
 		if($_POST['pay_style'] == 0){
@@ -61,7 +63,7 @@ class CartController extends Controller{
 		} else { 
 			$criteria=new CDbCriteria();
 			$criteria->condition="uid=? and add_time=?";
-			$criteria->select='uid,address,amount,detail,state';
+			$criteria->select='uid,address,amount,detail,state,mark,name';
 			$criteria->params=array($order->uid,$order->add_time);
 			$orderModel = Order::model()->find($criteria);
 			unset($cookies['cart']);

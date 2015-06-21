@@ -17,6 +17,7 @@
 			<tr>
 				<th>ID</th>
 				<th>uid(电话号码)</th>
+				<th>联系人</th>
 				<th>时间</th>
 				<th>价格</th>				
 				<th>更新时间</th>	
@@ -38,7 +39,10 @@
 				</td>
 				<td>
 					<?php echo $model['uid'] ?>
-				</td>			
+				</td>		
+								<td>
+					<?php echo $model['name'] ?>
+				</td>	
 				<td>
 					<?php echo date('Y-m-d H:i:s',$model['add_time']); ?>
 				</td>	
@@ -63,10 +67,12 @@
 					if(count($details)>1){
 						foreach ($details as $detail) {
 							$itemModel = $this->getItemInfo($detail->id);
-							if($detail->heat = 0){
-                        	$heat = "热";
-                        		} else {
-                        		$heat = "冷";
+							if($detail->heat = '0'){
+                        	$heat = "冷";
+                        		} elseif ($detail->heat = '1'){
+                        		$heat = "常温";
+                        	}else{
+                        		$heat = "热";
                         	}
                         	switch ($detail->sugar) {
                         		case '10':
@@ -93,10 +99,12 @@
 					} else {
 						//var_dump($details[0]);
 						$itemModel = $this->getItemInfo($details[0]->id);
-							if($details[0]->heat = 0){
-                        	$heat = "热";
-                        		} else {
-                        		$heat = "冷";
+							if($details[0]->heat = '0'){
+                        	$heat = "冷";
+                        		} elseif ($details[0]->heat = '1'){
+                        		$heat = "常温";
+                        	}else{
+                        		$heat = "热";
                         	}
                         	switch ($details[0]->sugar) {
                         		case '10':
@@ -122,6 +130,7 @@
 					}
 					
 					?>
+					<?php echo "<br/>备注：".$model['mark'];?>
 				</td>
 				<td>
 					<?php echo $model['address'] ?>

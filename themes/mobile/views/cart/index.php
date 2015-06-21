@@ -12,10 +12,12 @@
                     <em>
                         <?php 
                         $itemModel = $this->getItemInfo($model->id);
-                        if($model->heat == '1'){
-                        	$heat = "热";
-                        } else {
+                        if($model->heat == '0'){
                         	$heat = "冷";
+                        } elseif($model->heat == '1') {
+                        	$heat = "常温";
+                        } else {
+                            $heat = "热";
                         }
                         switch ($model->sugar) {
                         	case '10':
@@ -39,7 +41,6 @@
                         }
                         echo $itemModel['title']."<br/>".$itemModel['price']."元*".$model->count."杯 "
                         .$sugar."  ".$heat;
-                        echo "<br/>备注:".$model->mark;
                         $total = $model->count * $itemModel['price'] + $total;?>
                     </em>
                     <a class="show-share-bottom" onclick="updateCart(<?php echo $flag;?>)">修改</a>

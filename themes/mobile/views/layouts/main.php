@@ -96,12 +96,11 @@
             选择温度:
             <select id="heat">
             <option value ="0">冷</option>
-            <option value ="1">热</option>
+            <option value ="1">常温</option>
+            <option value ="2">热</option>
             </select>
             <h6>数目</h6>
             <input type="number" id="count" name="count" value="1"/>
-            <h6>备注:</h6>
-            <input type="text" id="mark" name="mark" value=""/>
             <div class="formSubmitButtonErrorsWrap">
             <input type="button" class="buttonWrap button button-green contactSubmitButton" id="addBtn" value="加入购物车" onclick="add2cart()" />
             </div>

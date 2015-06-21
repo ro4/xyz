@@ -1,4 +1,5 @@
 <div class="content">
+你好，<?php echo $model['name']?>,
 <?php if($model['pay_style'] == '0'):?>
 
 订单提交成功，请尽快支付<?php echo $model['amount'];?>元,我们会用最快速度把外卖送到<?php echo $model['address']?>,你的电话:<?php echo $model['uid']?>.
