@@ -165,6 +165,8 @@
 				<a class="text-error" onclick="return confirm('退款成功了吗？');" href="<?php echo $this->createUrl('setstate',array('oid'=>$model['oid'],'state'=>5)) ?>">退款成功</a>
 						&nbsp;/&nbsp;
 				<?php else :?>
+				<a class="text-error" onclick="return confirm('您确认要完成吗?');" href="<?php echo $this->createUrl('setstate',array('oid'=>$model['oid'],'state'=>3))  ?>">完成</a>
+				&nbsp;/&nbsp;
 				<a class="text-error" onclick="return confirm('确认取消？');" href="<?php echo $this->createUrl('cancel',array('id'=>$model['oid'])) ?>">取消</a>
 						&nbsp;/&nbsp;
 				<?php endif;?>

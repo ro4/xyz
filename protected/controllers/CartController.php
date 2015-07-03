@@ -40,6 +40,7 @@ class CartController extends Controller{
 			if($itemModel['state'] != '1'){
 				$this->error($itemModel['title']."已售光或者下架",'/cart');
 			}
+			$this->incSaleCount($itemModel['id'],$model->count);
 			$total = $model->count * $itemModel['price'] + $total;
 		}
 		$order = new Order();
@@ -63,7 +64,7 @@ class CartController extends Controller{
 		} else { 
 			$criteria=new CDbCriteria();
 			$criteria->condition="uid=? and add_time=?";
-			$criteria->select='uid,address,amount,detail,state,mark,name';
+			$criteria->select='uid,address,pay_style,amount,detail,state,mark,name';
 			$criteria->params=array($order->uid,$order->add_time);
 			$orderModel = Order::model()->find($criteria);
 			unset($cookies['cart']);
@@ -72,5 +73,12 @@ class CartController extends Controller{
 	}
 	public function getItemInfo($id){
 		return Item::model()->findByPk($id);
+	}
+
+
+	private function incSaleCount($id,$num){
+		if(!Item::model()->updateByPk($id, array('sale_count'=>new CDbExpression('sale_count+'.$num)))){
+			throw new ErrorException('计数失败');
+		}
 	}
 }

@@ -30,7 +30,7 @@
             	<div class="decoration"></div> 
                 <p class="user-list-follow">
                     <img src="http://ww1.sinaimg.cn/large/6af4b991gw1etamnsszfuj208h07ht99.jpg" alt="img">
-                    <strong><?php echo $model['title']?>   <?php echo $model['price']?>元<br><em><?php echo $model['detail']?></em></strong>
+                    <strong><?php echo $model['title']?>   <?php echo $model['price']?>元<br><em><?php echo $model['detail']?><br/>已售出<?php echo $model['sale_count'];?>份</em></strong>
                     <?php if('1' == $model['state']):?>
                     <a class="follow show-share-bottom" onclick="sendId(<?php echo $model['id']?>)">加入购物车</a>
                     <?php elseif('2' == $model['state']):?>
@@ -40,5 +40,8 @@
                 	<?php endif;?>
                 </p>
             <?php endforeach;?>
+            <?php if(!$_GET):?>
+            <span>为节省你的流量，全部最多显示10条，点击上面的分类查看更多。</span>
+            <?php endif;?>
             </div>  
        </div>
