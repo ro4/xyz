@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class CartController extends Controller{
 	public function actionIndex(){
@@ -13,10 +13,9 @@ class CartController extends Controller{
 
 	public function actionPay(){
 
-		$total = 0;
-		$cookie = Yii::app()->request->getCookies();
-		$models = json_decode($cookie['cart']->value);
-
+//		$total = 0;
+//		$cookie = Yii::app()->request->getCookies();
+//		$models = json_decode($cookie['cart']->value);
 		$this->render('pay');
 
 	}
@@ -61,7 +60,7 @@ class CartController extends Controller{
 		$order->amount = $total;
 		if(!$order->save()){
 			$this->error("提交订单失败，联系店家！","/show/about");
-		} else { 
+		} else {
 			$criteria=new CDbCriteria();
 			$criteria->condition="uid=? and add_time=?";
 			$criteria->select='uid,address,pay_style,amount,detail,state,mark,name';
