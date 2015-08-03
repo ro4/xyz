@@ -5,6 +5,8 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 .idea/*
+protected/admin/runtime/*
+.setting/*
 
 # =========================
 # Operating System Files
@@ -55,3 +57,4 @@ $RECYCLE.BIN/
 *.name
 *.tags
 *.tags1
+*.log
