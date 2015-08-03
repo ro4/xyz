@@ -4,6 +4,7 @@ protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
+.idea/*
 
 # =========================
 # Operating System Files
@@ -51,3 +52,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.name
+*.tags
+*.tags1

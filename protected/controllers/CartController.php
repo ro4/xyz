@@ -13,10 +13,9 @@ class CartController extends Controller{
 
 	public function actionPay(){
 
-		$total = 0;
-		$cookie = Yii::app()->request->getCookies();
-		$models = json_decode($cookie['cart']->value);
-
+//		$total = 0;
+//		$cookie = Yii::app()->request->getCookies();
+//		$models = json_decode($cookie['cart']->value);
 		$this->render('pay');
 
 	}
